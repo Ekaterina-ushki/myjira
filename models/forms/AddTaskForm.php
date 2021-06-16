@@ -1,10 +1,13 @@
 <?php
 
-namespace app\models;
+namespace app\models\forms;
 
 use Yii;
 use yii\base\Model;
 
+/**
+ * TaskForm is the model behind the task form.
+ */
 class AddTaskForm extends Model
 {
     public $title;
@@ -14,7 +17,9 @@ class AddTaskForm extends Model
     public $status;
     public $serviceClass;
 
-
+    /**
+     * @return array the validation rules.
+     */
     public function rules()
     {
         return [

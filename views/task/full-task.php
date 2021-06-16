@@ -9,7 +9,7 @@ $this->title = 'Описание задачи "' . $task->title . '"';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
-    <a href="/site/update-task?id=<?=$task->id?>"><button type="button" class="btn btn-primary">Update task</button></a>
+    <a href="/task/update-task?id=<?=$task->id?>"><button type="button" class="btn btn-primary">Update task</button></a>
 </div>
 <p>Name: <?=Html::encode($task->title)?></p>
 <p>Task type: <?=Html::encode($type->name)?></p>
@@ -25,13 +25,13 @@ $this->params['breadcrumbs'][] = $this->title;
         function add_comment() {
             var id = <?=$task->id?>;
             var text = document.getElementById("comment").value;
-            window.location.replace("/site/add-comment?id=" + id + "&text=" + text);
+            window.location.replace("/task/add-comment?id=" + id + "&text=" + text);
         }
     </script>
     <button class="btn btn-primary" onclick="add_comment()">Add</button>
     </br>
 <div>
-    <a href="/site/delete-task?id=<?=$task->id?>"><button type="button" class="btn btn-primary">Delete task</button></a>
+    <a href="/task/delete-task?id=<?=$task->id?>"><button type="button" class="btn btn-primary">Delete task</button></a>
 </div>
 <?php foreach ($comments as $comment) { ?>
     <div class="flex-container">

@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\models\User;
+use app\models\db\User;
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -39,7 +39,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Public Tasks', 'url' => ['/site/index']],
+            ['label' => 'Public Tasks', 'url' => ['/task/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contacts', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (

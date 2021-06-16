@@ -1,10 +1,14 @@
 <?php
 
-namespace app\models;
+namespace app\models\db;
 
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
+/**
+ * ActiveRecord user class.
+
+ */
 class User extends ActiveRecord implements IdentityInterface
 {
 
@@ -32,11 +36,21 @@ class User extends ActiveRecord implements IdentityInterface
                 ->password;
     }
 
+    /**
+     * Method get user id.
+     *
+     * @return Integer
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Method get user login.
+     *
+     * @return String
+     */
     public function getLogin()
     {
         return $this->login;

@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-use app\models\Task;
+use app\models\db\Task;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -12,7 +12,7 @@ use yii\helpers\Url;
 $this->title = 'Public tasks';
 ?>
 <div>
-    <a href="/site/add-task"><button type="button" class="btn btn-primary">Add task</button></a>
+    <a href="/task/add-task"><button type="button" class="btn btn-primary">Add task</button></a>
 </div>
 <div class="site-tasks">
     <h1><?= Html::encode($this->title) ?></h1>

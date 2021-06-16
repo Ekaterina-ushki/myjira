@@ -23,7 +23,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\db\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -50,6 +50,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'site/full-task/<id:\d+>' => 'site/full-task',
+                'site/delete-task/<id:\d+>' => 'site/delete-task',
+                'site/update-task/<id:\d+>' => 'site/update-task',
+                'site/add-comment/<id:\d+>/<text:\w+>' => 'site/add-comment'
             ],
         ],
     ],

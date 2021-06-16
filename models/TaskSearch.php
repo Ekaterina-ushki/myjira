@@ -2,11 +2,19 @@
 
 namespace app\models;
 
+use app\models\db\Task;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\debug\models\timeline\DataProvider;
 
+/**
+ * TaskSearch is the helper class to filtrate tasks.
+ */
 class TaskSearch extends Task
 {
+    /**
+     * @return array the validation rules.
+     */
     public function rules()
     {
         // only fields in rules() are searchable
@@ -22,6 +30,11 @@ class TaskSearch extends Task
         return Model::scenarios();
     }
 
+    /**
+     * Method set filters by value.
+     *
+     * @return ActiveDataProvider
+     */
     public function search($params)
     {
         $query = Task::find();
